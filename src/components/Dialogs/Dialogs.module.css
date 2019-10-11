@@ -18,8 +18,15 @@ padding: 10px;
 
 .messages {
 padding: 10px;
+line-height: 75px;
 }
 
 .messages .message {
 
+}
+
+.dialog img {
+    width: 50%;
+    height: 50%;
+    border-radius: 30px;
 }

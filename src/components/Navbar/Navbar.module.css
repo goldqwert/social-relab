@@ -12,3 +12,8 @@
 .item a.activeLink {
     color: white;
 }
+
+.friends {
+    margin-top: 100px;
+    text-align: center;
+}
