@@ -1,19 +1,23 @@
 .friends {
     margin-top: 100px;
-    display: grid;
-    justify-content: stretch;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .friendLink {
+    display: flex;
     font-size: 20px;
     color: gold;
 }
 
 .itemFriend {
+    display: flex;
     color: gold;
 }
 
 .itemFriend img{
+    display: flex;
     width: 50px;
     height: 50px;
     border-radius: 30px;
