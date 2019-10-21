@@ -25,7 +25,8 @@ let state = {
             { id: 3, message: 'Yo' },
             { id: 4, message: 'Go play?' },
             { id: 5, message: 'I think' },
-        ]
+        ],
+        newMessageText: ''
     },
     sidebar: {
         friends: [
@@ -35,6 +36,8 @@ let state = {
         ]
     }
 }
+
+window.state = state;
 
 export let addPost = () => {
     let newPost = {
@@ -54,5 +57,20 @@ export let updateNewPostText = (newText) => {
     rerenderEntireTree(state);
 }
 
+
+export let sendMessage = () => {
+    let newMessage = {
+        id: 1,
+        message: state.dialogsPage.newMessageText
+    }
+    state.dialogsPage.messages.push(newMessage);
+    state.dialogsPage.newMessageText = '';
+    rerenderEntireTree(state);
+}
+
+export let updateNewMessage = (newText) => {
+    state.dialogsPage.newMessageText = newText;
+    rerenderEntireTree(state);
+}
 
 export default state;
