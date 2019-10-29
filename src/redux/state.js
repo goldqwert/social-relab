@@ -1,4 +1,3 @@
-
 let store = {
     _state: {
 
@@ -49,7 +48,9 @@ let store = {
     subscribe(observer) {
         this._callSubscriber = observer
     },
+
     dispatch(action) {
+        debugger
         if (action.type === 'ADD-POST') {
             let newPost = {
                 id: 5,
@@ -83,3 +84,15 @@ let store = {
 export default store;
 
 window.store = store;
+
+export const addPostActionCreate = () => {
+    return {
+        type: 'ADD-POST'
+    }
+}
+
+export const updateNewPostCreate = (text) => {
+    return {
+        type: 'UPDATE-NEW-POST-TEXT', newText: text
+    }
+}
