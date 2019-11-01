@@ -9,17 +9,16 @@ import Music from './components/Music/Music';
 import News from './components/News/News';
 import Settings from './components/Settings/Settings';
 import { BrowserRouter, Route } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 const App = (props) => {
-
+  debugger
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
         <Header />
         <Navbar state={props.state.sidebar} />
         <div className='app-wrapper-content'>
-          <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage} dispatch={props.dispatch} />} />
+          <Route path='/dialogs' render={() => <Dialogs store={props.store} dispatch={props.dispatch} />} />
           <Route path='/profile' render={() => <Profile profilePage={props.state.profilePage} dispatch={props.dispatch} />} />
           <Route path='/music' component={Music} />
           <Route path='/news' component={News} />
