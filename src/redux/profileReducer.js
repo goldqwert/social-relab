@@ -1,5 +1,6 @@
 
 const profileReducer = (action, state) => {
+
     switch (action.type) {
 
         case 'ADD-POST':
@@ -22,13 +23,13 @@ const profileReducer = (action, state) => {
 
 export default profileReducer;
 
-export const addPostActionCreate = () => {
+export const addPostActionCreater = () => {
     return {
         type: 'ADD-POST'
     }
 }
 
-export const updateNewPostCreate = (text) => {
+export const updateNewPostCreater = (text) => {
     return {
         type: 'UPDATE-NEW-POST-TEXT', newText: text
     }

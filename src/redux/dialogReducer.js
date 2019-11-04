@@ -1,3 +1,4 @@
+
 const dialogReducer = (state, action) => {
 
     switch (action.type) {
@@ -22,13 +23,13 @@ const dialogReducer = (state, action) => {
 export default dialogReducer;
 
 
-export const addMessageActionCreate = () => {
+export const addMessageActionCreater = () => {
     return {
         type: 'SEND-MESSAGE'
     }
 }
 
-export const updateNewMessageCreate = (text) => {
+export const updateNewMessageCreater = (text) => {
     return {
         type: 'UPDATE-NEW-MESSAGE', newText: text
     }

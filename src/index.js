@@ -8,9 +8,10 @@ import './index';
 
 
 let rerenderEntireTree = (state) => {
+    debugger
     ReactDOM.render(
         <BrowserRouter>
-            <App state={state} dispatch={store.dispatch.bind(store)} store={store} />
+            <App dispatch={store.dispatch.bind(store)} store={store} state={state} />
         </BrowserRouter>, document.getElementById('root'))
 }
 
