@@ -1,5 +1,26 @@
 
-const dialogReducer = (state, action) => {
+let initialState = {
+    dialogs: [
+        { id: 1, name: 'Veronika' },
+        { id: 2, name: 'Fill' },
+        { id: 3, name: 'Artem' },
+        { id: 4, name: 'Sergey' },
+        { id: 5, name: 'Vlad' },
+        { id: 6, name: 'Nikita' }
+    ],
+
+    messages: [
+        { id: 1, message: 'Hi.How are you?' },
+        { id: 2, message: 'Hey' },
+        { id: 3, message: 'Yo' },
+        { id: 4, message: 'Go play?' },
+        { id: 5, message: 'I think' },
+    ],
+    newMessageText: ''
+}
+
+
+const dialogReducer = (state = initialState, action) => {
 
     switch (action.type) {
 
