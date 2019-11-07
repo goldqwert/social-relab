@@ -8,15 +8,15 @@ import { addMessageActionCreater, updateNewMessageCreater } from '../../redux/di
 
 const Dialogs = (props) => {
 
-    let state = props.store.getState().dialogsPage;
+    let state = props.dialogsPage;
 
     let sendMessage = () => {
-        props.dispatch(addMessageActionCreater());
+        props.onSendMessage()
     }
 
     let onChangeMessage = (e) => {
         let text = e.target.value;
-        props.dispatch(updateNewMessageCreater(text));
+        props.onUpdateChangeMessage(text)
     }
 
 
