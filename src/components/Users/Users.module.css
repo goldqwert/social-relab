@@ -1,0 +1,9 @@
+.wrapper {
+   padding: 20px 20px;
+}
+
+.userPhoto {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+}
