@@ -12,7 +12,7 @@ const Users = (props) => {
                     photoUrl: 'http://pm1.narvii.com/6889/74979d4d2744ec6e27995b6e866f091d04c0b40cr1-515-414v2_uhq.jpg'
                 },
                 {
-                    id: 2, followed: false, fullname: 'Sasha', status: 'I am a boss', location: { city: 'Moscow', country: 'Russia' },
+                    id: 2, followed: true, fullname: 'Sasha', status: 'I am a boss', location: { city: 'Moscow', country: 'Russia' },
                     photoUrl: 'http://pm1.narvii.com/6889/74979d4d2744ec6e27995b6e866f091d04c0b40cr1-515-414v2_uhq.jpg'
                 },
                 {
@@ -31,8 +31,8 @@ const Users = (props) => {
                     <img src={u.photoUrl} className={s.userPhoto} alt="photo" />
                 </div>
 
-                {u.followed ? <button onClick={props.unfollow(u.id)}>Follow</button> :
-                    <button onClick={props.follow(u.id)}>Unfollow</button>}
+                {u.followed ? <button onClick={() => props.unfollow(u.id)}>Follow</button> :
+                    <button onClick={() => props.follow(u.id)}>Unfollow</button>}
 
                 <div>{u.fullname}</div>
                 <div>{u.status}</div>
