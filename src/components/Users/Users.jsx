@@ -5,9 +5,8 @@ import photoNull from '../../assets/img/photoNull.png'
 
 
 class Users extends React.Component {
-    constructor(props) {
-        super(props)
 
+    componentDidMount() {
         axios.get('https://social-network.samuraijs.com/api/1.0/users')
             .then(response => {
                 this.props.setUsers(response.data.items)
