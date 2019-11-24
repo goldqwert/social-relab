@@ -1,19 +1,9 @@
 
 let initialState = {
-    users: [
-        // {
-        //     id: 1, followed: true, fullname: 'Dmitry', status: 'I am a boss', location: { city: 'Minsk', country: 'Belarus' },
-        //     photoUrl: 'http://pm1.narvii.com/6889/74979d4d2744ec6e27995b6e866f091d04c0b40cr1-515-414v2_uhq.jpg'
-        // },
-        // {
-        //     id: 2, followed: true, fullname: 'Sasha', status: 'I am a boss', location: { city: 'Moscow', country: 'Russia' },
-        //     photoUrl: 'http://pm1.narvii.com/6889/74979d4d2744ec6e27995b6e866f091d04c0b40cr1-515-414v2_uhq.jpg'
-        // },
-        // {
-        //     id: 3, followed: true, fullname: 'Lora', status: 'I am a boss', location: { city: 'Kiev', country: 'Ukraine' },
-        //     photoUrl: 'http://pm1.narvii.com/6889/74979d4d2744ec6e27995b6e866f091d04c0b40cr1-515-414v2_uhq.jpg'
-        // }
-    ]
+    users: [],
+    pageSize: 5,
+    totalUsersCount: 10,
+    currentPage: 2
 }
 
 
@@ -41,13 +31,21 @@ const usersReducer = (state = initialState, action) => {
                 })
             }
 
-        case 'SET-USERS':
-            debugger
+        case 'SET_USERS':
             return {
 
-                ...state, users: [...state.users, ...action.users]
+                ...state, users: action.users
             }
 
+        case 'SET_CURRENT_PAGE':
+            return {
+                ...state, currentPage: action.pageNumber
+            }
+
+        case 'SET_TOTAL_USERS_COUNT':
+            return {
+                ...state, totalUserCount: action.totalCount
+            }
         default: return state
     }
 
@@ -73,7 +71,19 @@ export const unfollowAC = (userId) => {
 
 export const setUsersAC = (users) => {
     return {
-        type: 'SET-USERS', users
+        type: 'SET_USERS', users
+    }
+}
+
+export const setCurrentPageAC = (pageNumber) => {
+    return {
+        type: 'SET_CURRENT_PAGE', pageNumber
+    }
+}
+
+export const setTotalUsersCountAC = (totalCount) => {
+    return {
+        type: 'SET_TOTAL_USERS_COUNT', totalCount
     }
 }
 
