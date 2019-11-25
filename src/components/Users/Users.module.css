@@ -17,3 +17,9 @@
     font-weight: bold;
     font-size: 25px;
 }
+
+.preloader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

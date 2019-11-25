@@ -3,7 +3,8 @@ let initialState = {
     users: [],
     pageSize: 5,
     totalUsersCount: 10,
-    currentPage: 2
+    currentPage: 1,
+    isFetching: false
 }
 
 
@@ -46,6 +47,11 @@ const usersReducer = (state = initialState, action) => {
             return {
                 ...state, totalUserCount: action.totalCount
             }
+
+        case 'PRELOADER_IS_FETCHING':
+            return {
+                ...state, isFetching: action.status
+            }
         default: return state
     }
 
@@ -87,4 +93,8 @@ export const setTotalUsersCountAC = (totalCount) => {
     }
 }
 
-
+export const preloaderIsFetchingAC = (status) => {
+    return {
+        type: 'PRELOADER_IS_FETCHING', status
+    }
+}
