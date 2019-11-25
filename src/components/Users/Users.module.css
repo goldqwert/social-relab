@@ -1,5 +1,10 @@
 .wrapper {
+    max-width: 1000px;
    padding: 20px 20px;
+   word-wrap: break-word;
+   /* display: flex;
+   flex-direction: column;
+   flex-wrap: wrap; */
 }
 
 .userPhoto {
@@ -10,5 +15,5 @@
 
 .selectedPage {
     font-weight: bold;
-    font-size: 25px
+    font-size: 25px;
 }
