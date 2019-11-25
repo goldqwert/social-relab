@@ -1,5 +1,5 @@
 import React from 'react';
-import { followAC, unfollowAC, setUsersAC, setCurrentPageAC, setTotalUsersCountAC, preloaderIsFetchingAC } from '../../redux/usersReducer'
+import { follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, preloaderIsFetching } from '../../redux/usersReducer'
 import { connect } from 'react-redux';
 import Users from './Users'
 import * as axios from 'axios'
@@ -56,29 +56,32 @@ let mapStateToProps = (state) => {
     }
 }
 
-let mapDispatchToProps = (dispatch) => {
-    return {
-        follow: (userId) => {
-            dispatch(followAC(userId));
-        },
-        unfollow: (userId) => {
-            dispatch(unfollowAC(userId));
-        },
-        setUsers: (users) => {
-            dispatch(setUsersAC(users))
-        },
-        setCurrentPage: (pageNumber) => {
-            dispatch(setCurrentPageAC(pageNumber))
-        },
-        setTotalUsersCount: (totalCount) => {
-            dispatch(setTotalUsersCountAC(totalCount))
-        },
-        preloaderIsFetching: (status) => {
-            dispatch(preloaderIsFetchingAC(status))
-        }
 
-    }
-}
+export default connect(mapStateToProps, {
+    follow, unfollow, setUsers,
+    setCurrentPage, setTotalUsersCount, preloaderIsFetching
+})(UsersContainer);
 
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);
+// let mapDispatchToProps = (dispatch) => {
+//     return {
+//         follow: (userId) => {
+//             dispatch(followAC(userId));
+//         },
+//         unfollow: (userId) => {
+//             dispatch(unfollowAC(userId));
+//         },
+//         setUsers: (users) => {
+//             dispatch(setUsersAC(users))
+//         },
+//         setCurrentPage: (pageNumber) => {
+//             dispatch(setCurrentPageAC(pageNumber))
+//         },
+//         setTotalUsersCount: (totalCount) => {
+//             dispatch(setTotalUsersCountAC(totalCount))
+//         },
+//         preloaderIsFetching: (status) => {
+//             dispatch(preloaderIsFetchingAC(status))
+//         }
 
+//     }
+// }

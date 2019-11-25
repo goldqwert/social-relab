@@ -1,7 +1,7 @@
 .nav {
     grid-area: n;
     background-color: rgb(77, 73, 73);
-    border: 1px dashed aqua;
+    border: 1px ridge aqua;
     padding: 20px;
 }
 
