@@ -6,7 +6,8 @@ let initialState = {
         { id: 2, message: 'Hello all', likesCount: 1 },
         { id: 3, message: 'Add me to friend', likesCount: 2 }
     ],
-    newPostText: ''
+    newPostText: '',
+    profile: null
 }
 
 
@@ -30,7 +31,12 @@ const profileReducer = (state = initialState, action) => {
                 ...state,
                 newPostText: action.newText
             }
+        case 'SET-USER-PROFILE':
+            return {
+                ...state,
+                profile: action.profile
 
+            }
         default: return state;
 
     }
@@ -47,6 +53,13 @@ export const addPostActionCreater = () => {
 export const updateNewPostCreater = (text) => {
     return {
         type: 'UPDATE-NEW-POST-TEXT', newText: text
+    }
+}
+debugger
+export const setUserProfile = (profile) => {
+    debugger
+    return {
+        type: 'SET-USER-PROFILE', profile
     }
 }
 
