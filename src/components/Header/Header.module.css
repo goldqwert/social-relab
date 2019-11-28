@@ -8,3 +8,9 @@
 .header img {
     width: 20px;
 }
+
+.auth {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
