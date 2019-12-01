@@ -1,5 +1,5 @@
 import React from 'react';
-import { follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, preloaderIsFetching } from '../../redux/usersReducer'
+import { follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, preloaderIsFetching, changeFollowInProgress } from '../../redux/usersReducer'
 import { connect } from 'react-redux';
 import Users from './Users'
 import * as axios from 'axios'
@@ -42,6 +42,8 @@ class UsersContainer extends React.Component {
                 users={this.props.users}
                 follow={this.props.follow}
                 unfollow={this.props.unfollow}
+                changeFollowInProgress={this.props.changeFollowInProgress}
+                followInProgress={this.props.followInProgress}
             />}
 
         </>
@@ -54,36 +56,13 @@ let mapStateToProps = (state) => {
         pageSize: state.usersPage.pageSize,
         totalUserCount: state.usersPage.totalUserCount,
         currentPage: state.usersPage.currentPage,
-        isFetching: state.usersPage.isFetching
+        isFetching: state.usersPage.isFetching,
+        followInProgress: state.usersPage.followInProgress
     }
 }
 
 
 export default connect(mapStateToProps, {
     follow, unfollow, setUsers,
-    setCurrentPage, setTotalUsersCount, preloaderIsFetching
+    setCurrentPage, setTotalUsersCount, preloaderIsFetching, changeFollowInProgress
 })(UsersContainer);
-
-// let mapDispatchToProps = (dispatch) => {
-//     return {
-//         follow: (userId) => {
-//             dispatch(followAC(userId));
-//         },
-//         unfollow: (userId) => {
-//             dispatch(unfollowAC(userId));
-//         },
-//         setUsers: (users) => {
-//             dispatch(setUsersAC(users))
-//         },
-//         setCurrentPage: (pageNumber) => {
-//             dispatch(setCurrentPageAC(pageNumber))
-//         },
-//         setTotalUsersCount: (totalCount) => {
-//             dispatch(setTotalUsersCountAC(totalCount))
-//         },
-//         preloaderIsFetching: (status) => {
-//             dispatch(preloaderIsFetchingAC(status))
-//         }
-
-//     }
-// }
