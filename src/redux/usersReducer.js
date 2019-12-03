@@ -1,3 +1,4 @@
+import { usersAPI } from "../api/api";
 
 let initialState = {
     users: [],
@@ -71,3 +72,16 @@ export const setCurrentPage = (pageNumber) => ({ type: 'SET_CURRENT_PAGE', pageN
 export const setTotalUsersCount = (totalCount) => ({ type: 'SET_TOTAL_USERS_COUNT', totalCount })
 export const preloaderIsFetching = (status) => ({ type: 'PRELOADER_IS_FETCHING', status })
 export const changeFollowInProgress = (status, userId) => ({ type: 'CHANGE_FOLLOW_IN_PROGRESS', status, userId })
+
+
+export const getUsers = (currentPage, pageSize) => {
+    return (dispatch) => {
+        dispatch(preloaderIsFetching(true));
+        usersAPI.getUsers(currentPage, pageSize)
+            .then(data => {
+                dispatch(setUsers(data.items));
+                dispatch(setTotalUsersCount(data.totalCount));
+                dispatch(preloaderIsFetching(false));
+            })
+    }
+}
