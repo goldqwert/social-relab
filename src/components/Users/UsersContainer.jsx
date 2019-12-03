@@ -1,11 +1,9 @@
 import React from 'react';
-import { follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, preloaderIsFetching, changeFollowInProgress, getUsers } from '../../redux/usersReducer'
+import { follow, unfollow, getUsers } from '../../redux/usersReducer'
 import { connect } from 'react-redux';
 import Users from './Users'
-import * as axios from 'axios'
 import s from './Users.module.css';
 import Preloader from '../Preloader/Preloader';
-import { usersAPI } from '../../api/api.js'
 
 class UsersContainer extends React.Component {
 
@@ -17,19 +15,15 @@ class UsersContainer extends React.Component {
         this.props.getUsers(pageNumber, this.props.pageSize)
     }
 
-
-
-
     render() {
         return <>
-            {this.props.isFetching ? <Preloader classForPreloader={s.preloader} /> : <Users totalUserCount={this.props.totalUserCount}
+            {this.props.isFetching ? <Preloader classForPreloader={s.preloader} /> : <Users totalUsersCount={this.props.totalUsersCount}
                 pageSize={this.props.pageSize}
                 onPageChanged={this.onPageChanged}
                 currentPage={this.props.currentPage}
                 users={this.props.users}
                 follow={this.props.follow}
                 unfollow={this.props.unfollow}
-                changeFollowInProgress={this.props.changeFollowInProgress}
                 followInProgress={this.props.followInProgress}
             />}
 
@@ -41,7 +35,7 @@ let mapStateToProps = (state) => {
     return {
         users: state.usersPage.users,
         pageSize: state.usersPage.pageSize,
-        totalUserCount: state.usersPage.totalUserCount,
+        totalUsersCount: state.usersPage.totalUsersCount,
         currentPage: state.usersPage.currentPage,
         isFetching: state.usersPage.isFetching,
         followInProgress: state.usersPage.followInProgress
@@ -50,6 +44,5 @@ let mapStateToProps = (state) => {
 
 
 export default connect(mapStateToProps, {
-    follow, unfollow, setUsers,
-    setCurrentPage, setTotalUsersCount, preloaderIsFetching, changeFollowInProgress, getUsers
+    follow, unfollow, getUsers
 })(UsersContainer);

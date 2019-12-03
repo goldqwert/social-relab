@@ -43,7 +43,7 @@ const usersReducer = (state = initialState, action) => {
             }
         case 'SET_TOTAL_USERS_COUNT':
             return {
-                ...state, totalUserCount: action.totalCount
+                ...state, totalUsersCount: action.totalCount
             }
         case 'PRELOADER_IS_FETCHING':
             return {
@@ -65,8 +65,8 @@ debugger
 
 export default usersReducer;
 
-export const follow = (userId) => ({ type: 'FOLLOW', userId })
-export const unfollow = (userId) => ({ type: 'UNFOLLOW', userId })
+export const followSuccess = (userId) => ({ type: 'FOLLOW', userId })
+export const unfollowSuccess = (userId) => ({ type: 'UNFOLLOW', userId })
 export const setUsers = (users) => ({ type: 'SET_USERS', users })
 export const setCurrentPage = (pageNumber) => ({ type: 'SET_CURRENT_PAGE', pageNumber })
 export const setTotalUsersCount = (totalCount) => ({ type: 'SET_TOTAL_USERS_COUNT', totalCount })
@@ -82,6 +82,32 @@ export const getUsers = (currentPage, pageSize) => {
                 dispatch(setUsers(data.items));
                 dispatch(setTotalUsersCount(data.totalCount));
                 dispatch(preloaderIsFetching(false));
+            })
+    }
+}
+
+export const follow = (userId) => {
+    return (dispatch) => {
+        dispatch(changeFollowInProgress(true, userId));
+        usersAPI.follow(userId)
+            .then(response => {
+                if (response.data.resultCode === 0) {
+                    dispatch(unfollowSuccess(userId))
+                }
+                dispatch(changeFollowInProgress(false, userId));
+            })
+    }
+}
+
+export const unfollow = (userId) => {
+    return (dispatch) => {
+        dispatch(changeFollowInProgress(true, userId));
+        usersAPI.unfollow(userId)
+            .then(response => {
+                if (response.data.resultCode === 0) {
+                    dispatch(followSuccess(userId))
+                }
+                dispatch(changeFollowInProgress(false, userId));
             })
     }
 }

@@ -1,3 +1,4 @@
+import { headersAPI } from '../api/api';
 
 let initialState = {
     userId: null,
@@ -21,9 +22,22 @@ const authReducer = (state = initialState, action) => {
     }
 }
 
+export default authReducer;
+
 export const setAuthUserData = (id, email, login) => ({ type: 'SET-AUTH-USER-DATA', data: { id, email, login } })
 
-export default authReducer;
+export const getAuth = () => {
+    return (dispatch) => {
+        headersAPI.getAuth()
+            .then(response => {
+                if (response.data.resultCode === 0) {
+                    let { id, email, login } = response.data.data
+                    dispatch(setAuthUserData(id, email, login));
+                }
+            })
+    }
+}
+
 
 
 
