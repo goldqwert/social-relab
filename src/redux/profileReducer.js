@@ -1,4 +1,4 @@
-
+import { usersAPI } from '../api/api';
 
 let initialState = {
     posts: [
@@ -44,22 +44,16 @@ const profileReducer = (state = initialState, action) => {
 
 export default profileReducer;
 
-export const addPostActionCreater = () => {
-    return {
-        type: 'ADD-POST'
-    }
-}
+export const addPostActionCreater = () => ({ type: 'ADD-POST' })
+export const updateNewPostCreater = (text) => ({ type: 'UPDATE-NEW-POST-TEXT', newText: text })
+export const setUserProfile = (profile) => ({ type: 'SET-USER-PROFILE', profile })
 
-export const updateNewPostCreater = (text) => {
-    return {
-        type: 'UPDATE-NEW-POST-TEXT', newText: text
-    }
-}
-debugger
-export const setUserProfile = (profile) => {
-    debugger
-    return {
-        type: 'SET-USER-PROFILE', profile
+export const getUserProfile = (userId) => {
+    return (dispatch) => {
+        usersAPI.getProfile(userId)
+            .then(response => {
+                dispatch(setUserProfile(response.data));
+            })
     }
 }
 

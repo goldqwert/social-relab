@@ -1,4 +1,4 @@
-import { headersAPI } from '../api/api';
+import { authAPI } from '../api/api';
 
 let initialState = {
     userId: null,
@@ -28,7 +28,7 @@ export const setAuthUserData = (id, email, login) => ({ type: 'SET-AUTH-USER-DAT
 
 export const getAuth = () => {
     return (dispatch) => {
-        headersAPI.getAuth()
+        authAPI.getAuth()
             .then(response => {
                 if (response.data.resultCode === 0) {
                     let { id, email, login } = response.data.data
