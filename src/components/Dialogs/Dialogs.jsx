@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Dialogs.module.css'
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
-import { addMessageActionCreater, updateNewMessageCreater } from '../../redux/dialogReducer'
+import { Redirect } from 'react-router-dom'
 
 
 
@@ -25,6 +25,10 @@ const Dialogs = (props) => {
     let messagesElements = state.messages.map((m) => <Message message={m.message} id={m.id} />)
 
     let valueOfMessageArea = state.newMessageText
+
+    if (!props.isAuth) {
+        return <Redirect to={'/login'} />
+    }
 
     return (
         <div className={s.dialogs}>
