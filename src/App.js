@@ -20,10 +20,10 @@ const App = (props) => {
         <div className='app-wrapper-content'>
           <Route path='/dialogs' render={() => <DialogsContainer />} />
           <Route path='/profile/:userId?' render={() => <ProfileContainer />} />
+          <Route path='/users' render={() => <UsersContainer />} />
           <Route path='/music' component={Music} />
           <Route path='/news' component={News} />
           <Route path='/setting' component={Settings} />
-          <Route path='/users' render={() => <UsersContainer />} />
           <Route path='/login' render={() => <Login />} />
         </div>
       </div>
