@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './ProfileInfo.module.css';
 import Preloader from '../../Preloader/Preloader';
+import ProfileStatus from './ProfileStatus';
 
 const ProfileInfo = (props) => {
 
@@ -10,11 +11,12 @@ const ProfileInfo = (props) => {
 
 
     return (<div>
-        <div>
+        {/* <div>
             <img src='https://www.belightsoft.com/products/imagetricks/img/intro-video-poster@2x.jpg' alt=''></img>
-        </div>
+        </div> */}
         <div className={s.descriptionBlock}>
             <img src={props.profile.photos.large} />
+            <ProfileStatus status='Привет я рэлаб' />
             <div>{props.profile.lookingForAJob}</div>
             <div>{props.profile.lookingForAJobDescription}</div>
             <div>{props.profile.fullName}</div>
@@ -26,7 +28,6 @@ const ProfileInfo = (props) => {
             <div>{props.profile.contacts.website}</div>
             <div>{props.profile.contacts.youtube}</div>
             <div>{props.profile.contacts.mainLink}</div>
-
         </div>
     </div>)
 }
