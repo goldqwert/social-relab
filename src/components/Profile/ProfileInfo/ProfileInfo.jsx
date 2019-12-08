@@ -4,7 +4,7 @@ import Preloader from '../../Preloader/Preloader';
 import ProfileStatus from './ProfileStatus';
 
 const ProfileInfo = (props) => {
-
+    debugger
     if (!props.profile) {
         return <Preloader />
     }
@@ -16,7 +16,7 @@ const ProfileInfo = (props) => {
         </div> */}
         <div className={s.descriptionBlock}>
             <img src={props.profile.photos.large} />
-            <ProfileStatus status='Привет я рэлаб' />
+            <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
             <div>{props.profile.lookingForAJob}</div>
             <div>{props.profile.lookingForAJobDescription}</div>
             <div>{props.profile.fullName}</div>
