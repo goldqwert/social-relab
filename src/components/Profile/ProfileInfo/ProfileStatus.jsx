@@ -2,6 +2,14 @@ import React from 'react'
 
 class ProfileStatus extends React.Component {
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.status !== this.props.status) {
+            this.setState({
+                status: this.props.status
+            })
+        }
+    }
+
     state = {
         editStatus: false,
         status: this.props.status
