@@ -5,7 +5,7 @@ const AddMessageForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
             <div>
-                <Field component="textarea" placeholder='Enter your message' name="newMessageBody" />
+                <Field component="textarea" placeholder='Enter your message' name="valueOfMessageArea" />
             </div>
             <div>
                 <button>Send</button>
@@ -14,4 +14,4 @@ const AddMessageForm = (props) => {
     )
 }
 
-export default reduxForm({ form: 'dialog-add-message-form' })(AddMessageForm);
+export default reduxForm({ form: 'DialogAddMessageForm' })(AddMessageForm);

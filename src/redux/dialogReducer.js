@@ -8,15 +8,13 @@ let initialState = {
         { id: 5, name: 'Vlad' },
         { id: 6, name: 'Nikita' }
     ],
-
     messages: [
         { id: 1, message: 'Hi.How are you?' },
         { id: 2, message: 'Hey' },
         { id: 3, message: 'Yo' },
         { id: 4, message: 'Go play?' },
         { id: 5, message: 'I think' },
-    ],
-    newMessageText: ''
+    ]
 }
 
 
@@ -27,38 +25,17 @@ const dialogReducer = (state = initialState, action) => {
         case 'SEND-MESSAGE':
             let newMessage = {
                 id: 1,
-                message: state.newMessageText
+                message: action.valueOfMessageArea
             }
             return {
                 ...state,
                 messages: [...state.messages, newMessage],
                 newMessageText: ''
             }
-
-        case 'UPDATE-NEW-MESSAGE':
-
-            return {
-                ...state,
-                newMessageText: action.newText
-            }
-
         default: return state;
     }
 }
 
-
-
 export default dialogReducer;
 
-
-export const addMessageActionCreater = () => {
-    return {
-        type: 'SEND-MESSAGE'
-    }
-}
-
-export const updateNewMessageCreater = (text) => {
-    return {
-        type: 'UPDATE-NEW-MESSAGE', newText: text
-    }
-}
+export const sendMessage = (valueOfMessageArea) => ({ type: 'SEND-MESSAGE', valueOfMessageArea })
