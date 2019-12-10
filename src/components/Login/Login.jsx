@@ -22,6 +22,7 @@ LoginForm = reduxForm({
 
 const Login = (props) => {
     let submit = values => { }
+
     return (
         <div>
             <LoginForm onSubmit={submit} />
