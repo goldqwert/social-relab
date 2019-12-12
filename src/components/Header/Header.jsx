@@ -7,12 +7,11 @@ const Header = (props) => {
     return <header className={s.header}>
         <img src="https://s2.logaster.com/static/v3/img/products/logo.png" alt='text'></img>
         <div className={s.auth}>
-            {props.isAuth ? props.login : <NavLink to={'/login'} className={s.login}>
-                login
-            </NavLink>}
+            {props.isAuth
+                ? <div>{props.login} - <button onClick={props.logout}>Logout</button></div>
+                : <NavLink to={'/login'} className={s.login}>
+                    login</NavLink>}
         </div>
-
-
     </header >
 }
 
