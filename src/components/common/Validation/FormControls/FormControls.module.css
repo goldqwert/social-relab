@@ -8,3 +8,9 @@
 {
     color: red;
 } 
+
+.summaryError {
+    border: 2px solid red;
+    color: black;
+    background: red;
+}
