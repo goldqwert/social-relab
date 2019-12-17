@@ -77,6 +77,7 @@ export const changeFollowInProgress = (status, userId) => ({ type: 'CHANGE_FOLLO
 export const getUsers = (currentPage, pageSize) => {
     return (dispatch) => {
         dispatch(preloaderIsFetching(true));
+        dispatch(setCurrentPage(currentPage));
         usersAPI.getUsers(currentPage, pageSize)
             .then(data => {
                 dispatch(setUsers(data.items));
