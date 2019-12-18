@@ -1,47 +1,42 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-class ProfileStatus extends React.Component {
+const ProfileStatus = (props) => {
 
-    componentDidUpdate(prevProps) {
-        if (prevProps.status !== this.props.status) {
-            this.setState({
-                status: this.props.status
-            })
-        }
+    // componentDidUpdate(prevProps) {
+    //     if (prevProps.status !== this.props.status) {
+    //         this.setState({
+    //             status: this.props.status
+    //         })
+    //     }
+    // }
+    const [editStatus, setEditStatus] = useState(false)
+    const [status, setStatus] = useState(props.status)
+
+    // state = {
+    //     editStatus: false,
+    //     status: this.props.status
+    // }
+
+    const activeEditStatus = () => {
+        setEditStatus(true)
     }
 
-    state = {
-        editStatus: false,
-        status: this.props.status
+    const deactiveEditStatus = () => {
+        setEditStatus(false)
+        props.updateStatus(status)
     }
 
-    activeEditStatus = () => {
-        this.setState({
-            editStatus: true
-        })
+    const onChangeStatus = (e) => {
+        setStatus(e.currentTarget.value)
     }
 
-    deactiveEditStatus = () => {
-        this.setState({
-            editStatus: false
-        })
-        this.props.updateStatus(this.state.status)
-    }
+    return (
+        <div>{editStatus
+            ? <input onChange={onChangeStatus} onBlur={deactiveEditStatus} autoFocus={true} value={status} />
+            : <div onClick={activeEditStatus}>{props.status || 'No status'}</div>}
+        </div>
+    )
 
-    onChangeStatus = (e) => {
-        this.setState({
-            status: e.currentTarget.value
-        })
-    }
-
-    render() {
-        return (
-            <div>{this.state.editStatus
-                ? <input onChange={this.onChangeStatus} onBlur={this.deactiveEditStatus} autoFocus={true} value={this.state.status} />
-                : <div onClick={this.activeEditStatus}>{this.props.status || 'No status'}</div>}
-            </div>
-        )
-    }
 }
 
 export default ProfileStatus;
