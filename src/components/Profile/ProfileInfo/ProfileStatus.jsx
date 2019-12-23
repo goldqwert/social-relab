@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 
 const ProfileStatus = (props) => {
 
-
     const [editStatus, setEditStatus] = useState(false)
     const [status, setStatus] = useState(props.status)
 
@@ -29,7 +28,6 @@ const ProfileStatus = (props) => {
             : <div onClick={activeEditStatus}>{props.status || 'No status'}</div>}
         </div>
     )
-
 }
 
 export default ProfileStatus;

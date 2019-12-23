@@ -1,5 +1,5 @@
 import React from 'react';
-import { Field, reduxForm } from "redux-form";
+import { Field, reduxForm } from 'redux-form';
 import { required, maxLength } from '../../common/Validation/Validation';
 import { Textarea } from '../../common/Validation/FormControls/FormControls'
 

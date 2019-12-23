@@ -1,11 +1,11 @@
-import React from 'react'
-import { Field, reduxForm } from 'redux-form'
-import { Input } from '../common/Validation/FormControls/FormControls'
-import { required } from '../common/Validation/Validation'
-import { login } from '../../redux/authReducer'
+import React from 'react';
+import { Field, reduxForm } from 'redux-form';
+import { Input } from '../common/Validation/FormControls/FormControls';
+import { required } from '../common/Validation/Validation';
+import { login } from '../../redux/authReducer';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import s from '../common/Validation/FormControls/FormControls.module.css'
+import s from '../common/Validation/FormControls/FormControls.module.css';
 
 let LoginForm = (props) => {
     const { handleSubmit } = props
@@ -28,16 +28,12 @@ LoginForm = reduxForm({
 })(LoginForm)
 
 const Login = (props) => {
-
     let onSubmit = (values) => {
-
         props.login(values.email, values.password, values.rememberMe)
     }
-
     if (props.isAuth) {
         return <Redirect to='/profile' />
     }
-
     return (
         <div>
             <LoginForm onSubmit={onSubmit} />

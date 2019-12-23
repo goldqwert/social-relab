@@ -2,20 +2,12 @@
     max-width: 1000px;
    padding: 20px 20px;
    word-wrap: break-word;
-   /* display: flex;
-   flex-direction: column;
-   flex-wrap: wrap; */
 }
 
 .userPhoto {
     width: 150px;
     height: 150px;
     border-radius: 100%;
-}
-
-.selectedPage {
-    font-weight: bold;
-    font-size: 25px;
 }
 
 .preloader {

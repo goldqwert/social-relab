@@ -1,3 +1,4 @@
+const SEND_MESSAGE = 'Social_Relab/DialogReducer/SEND_MESSAGE';
 
 let initialState = {
     dialogs: [
@@ -17,12 +18,9 @@ let initialState = {
     ]
 }
 
-
 const dialogReducer = (state = initialState, action) => {
-
     switch (action.type) {
-
-        case 'SEND-MESSAGE':
+        case SEND_MESSAGE:
             let newMessage = {
                 id: 1,
                 message: action.valueOfMessageArea
@@ -38,4 +36,4 @@ const dialogReducer = (state = initialState, action) => {
 
 export default dialogReducer;
 
-export const sendMessage = (valueOfMessageArea) => ({ type: 'SEND-MESSAGE', valueOfMessageArea })
+export const sendMessage = (valueOfMessageArea) => ({ type: SEND_MESSAGE, valueOfMessageArea })
