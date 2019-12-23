@@ -20,6 +20,7 @@ export const initializeSuccess = () => ({ type: 'INITIALIZE_SUCCESS' })
 export const initializeApp = () => {
     return (dispatch) => {
         let promise = dispatch(getAuth())
+        debugger
         Promise.all([promise]).then(() => {
             dispatch(initializeSuccess())
         })
