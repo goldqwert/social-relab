@@ -2,6 +2,7 @@ import { usersAPI, profileAPI } from '../api/api';
 const ADD_POST = 'Social_Relab/ProfileReducer/ADD_POST';
 const SET_USER_PROFILE = 'Social_Relab/ProfileReducer/SET_USER_PROFILE';
 const SET_STATUS = 'Social_Relab/ProfileReducer/SET_STATUS';
+const SAVE_PHOTO = 'Social_Relab/ProfileReducer/SAVE_PHOTO';
 
 let initialState = {
     posts: [
@@ -35,6 +36,11 @@ const profileReducer = (state = initialState, action) => {
                 ...state,
                 status: action.status
             }
+        case SAVE_PHOTO:
+            return {
+                ...state,
+                profile: { ...state.profile, photos: action.photo }
+            }
         default: return state;
     }
 }
@@ -44,6 +50,7 @@ export default profileReducer;
 export const addPost = (valueOfPostArea) => ({ type: ADD_POST, valueOfPostArea })
 export const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile })
 export const setStatus = (status) => ({ type: SET_STATUS, status })
+export const savePhotoSuccess = (photo) => ({ type: SAVE_PHOTO, photo })
 
 export const getUserProfile = (userId) => {
     return async (dispatch) => {
@@ -64,6 +71,15 @@ export const updateStatus = (status) => {
         const response = await profileAPI.updateStatus(status)
         if (response.data.resultCode === 0) {
             dispatch(setStatus(status));
+        }
+    }
+}
+
+export const savePhoto = (photo) => {
+    return async (dispatch) => {
+        const response = await profileAPI.savePhoto(photo);
+        if (response.data.resultCode === 0) {
+            dispatch(savePhotoSuccess(response.data.data.photos))
         }
     }
 }
