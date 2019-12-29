@@ -93,7 +93,7 @@ export const saveProfile = (profile) => {
             const userId = getState().auth.userId
             dispatch(getUserProfile(userId));
         } else {
-            dispatch(stopSubmit("edit-profile", { _error: response.data.messages[0] }));
+            dispatch(stopSubmit('profile-form', { _error: response.data.messages[0] }));
             return Promise.reject(response.data.messages[0]);
         }
     }
