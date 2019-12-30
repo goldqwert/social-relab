@@ -4,7 +4,7 @@ import Navbar from './components/Navbar/Navbar';
 import Music from './components/Music/Music';
 import News from './components/News/News';
 import Settings from './components/Settings/Settings';
-import { Route, withRouter } from 'react-router-dom';
+import { Route, withRouter, Switch, Redirect } from 'react-router-dom';
 // import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
 // import ProfileContainer from './components/Profile/ProfileContainer';
@@ -27,19 +27,22 @@ class App extends React.Component {
       return <Preloader />
     }
     return (
-      <div className='app-wrapper'>
-        <HeaderContainer />
-        <Navbar />
-        <div className='app-wrapper-content'>
-          <Route path='/dialogs' render={withSuspense(DialogsContainer)} />
-          <Route path='/profile/:userId?' render={withSuspense(ProfileContainer)} />
-          <Route path='/users' render={() => <UsersContainer />} />
-          <Route path='/music' component={Music} />
-          <Route path='/news' component={News} />
-          <Route path='/setting' component={Settings} />
-          <Route path='/login' render={() => <Login />} />
+      <Switch >
+        <div className='app-wrapper'>
+          <HeaderContainer />
+          <Navbar />
+          <div className='app-wrapper-content'>
+            <Redirect from='/' to='/profile' />
+            <Route path='/dialogs' render={withSuspense(DialogsContainer)} />
+            <Route path='/profile/:userId?' render={withSuspense(ProfileContainer)} />
+            <Route path='/users' render={() => <UsersContainer />} />
+            <Route path='/music' component={Music} />
+            <Route path='/news' component={News} />
+            <Route path='/setting' component={Settings} />
+            <Route path='/login' render={() => <Login />} />
+          </div>
         </div>
-      </div>
+      </Switch>
     );
   }
 }
