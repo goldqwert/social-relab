@@ -3,7 +3,7 @@ import s from './ProfileInfo.module.css';
 
 const ProfileContacts = (props) => {
     return (<div>
-        <b>{props.contactTitle}:</b> {props.contactValue}
+        <p>{props.contactTitle}: {props.contactValue || 'no'}</p>
     </div>)
 }
 

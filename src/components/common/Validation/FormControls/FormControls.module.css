@@ -1,16 +1,20 @@
 .form.error input,
 .form.error textarea
 {
-    border: solid red 2px;
+    border: solid #d3460d 2px;
 }
 
 .form.error span
 {
-    color: red;
+    color: #d3460d;
 } 
 
 .summaryError {
-    border: 2px solid red;
+    border: 2px solid #d3460d;
     color: black;
-    background: red;
+    background: #d3460d;
+}
+
+.errors {
+    height: 20px;
 }

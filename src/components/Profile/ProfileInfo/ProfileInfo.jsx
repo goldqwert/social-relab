@@ -21,18 +21,20 @@ const ProfileInfo = (props) => {
     }
 
     const onSubmit = (profile) => {
-        debugger
         props.saveProfile(profile).then(
             () => {
-                debugger
                 setEditMode(false)
             })
     }
 
     return (<div>
-        <div className={s.descriptionBlock}>
-            <img className={s.mainPhoto} src={props.profile.photos.large || photoNull} />
-            <div>{!props.match.params.userId ? <input type='file' onChange={changeMainPhoto} /> : undefined}</div>
+        <div className={s.wrapper}>
+            <div>
+                <div className={s.name}><h3>{props.profile.fullName}</h3></div>
+                <img className={s.photo} src={props.profile.photos.large || photoNull} />
+            </div>
+            <div>{!props.match.params.userId ? <input id='file' type='file' onChange={changeMainPhoto} /> : undefined}
+                <label for='file' className={s.upload}>change photo</label></div>
             <ProfileStatus status={props.status} updateStatus={props.updateStatus} isOwner={props.match.params.userId} />
             {editMode ? <ProfileForm profile={props.profile} onSubmit={onSubmit} /> : <ProfileData profile={props.profile}
                 isOwner={props.match.params.userId} activateEditMode={() => { setEditMode(true) }} />}

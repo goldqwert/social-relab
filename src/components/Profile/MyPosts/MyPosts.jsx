@@ -9,7 +9,7 @@ const MyPosts = (props) => {
         props.addPost(value.valueOfPostArea)
     }
     return (
-        <div className={s.postsBlock}>
+        <div className={s.posts_wrapper}>
             <h3>My posts</h3>
             <div>
                 <AddPostForm onSubmit={onAddPost} />

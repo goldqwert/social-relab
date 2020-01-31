@@ -1,0 +1,15 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    grid-gap: 1vw;
+}
+
+.posts, .info {
+    display: grid;
+    justify-self: stretch;
+    background-color: #fffbfb;
+    word-break: break-word;
+    text-align: center;
+    padding: 20px
+}

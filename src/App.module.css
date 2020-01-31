@@ -1,0 +1,27 @@
+body {
+  background-color: #eeeeee;
+  font: 300 16px 'Poppins', sans-serif;
+}
+
+textarea {
+  resize: none;
+  height: 50px;
+  width: 500px;
+  padding: 10px;
+  font: 300 16px 'Poppins', sans-serif;
+  border-radius: 10px;
+  outline: none;
+}
+
+/* input {
+  padding: 10px;
+  font: 300 16px 'Poppins', sans-serif;
+  border-radius: 10px;
+  /* outline: none; */
+
+
+.wrapper {
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  grid-gap: 1vw;
+}

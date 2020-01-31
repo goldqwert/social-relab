@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+import s from './ProfileInfo.module.css';
 
 const ProfileStatus = (props) => {
 
@@ -24,8 +25,8 @@ const ProfileStatus = (props) => {
 
     return (
         <div>{editStatus
-            ? <input onChange={onChangeStatus} onBlur={deactiveEditStatus} autoFocus={true} value={status} />
-            : <div onClick={activeEditStatus}>{props.status || 'No status'}</div>}
+            ? <div><b>status: </b><input onChange={onChangeStatus} onBlur={deactiveEditStatus} autoFocus={true} value={status} /></div>
+            : <div className={s.status} onClick={activeEditStatus}><b>status: </b>{props.status || 'No status'}</div>}
         </div>
     )
 }

@@ -1,7 +1,25 @@
-.postsBlock {
-    padding: 10px;
+.posts_wrapper {
+    padding: 10px; 
 }
 
 .posts {
-    margin-top: 10px;
+    display: grid;
+}
+
+.send {
+    background: #d3460d;
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    font-size: inherit;
+    font-weight: 600;
+    margin: 1rem;
+    outline: none;
+    padding: 10px 10px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.send:hover {
+    background: #a12f02;
 }

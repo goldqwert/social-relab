@@ -1,6 +1,5 @@
 import React from 'react';
-import './App.css';
-import Navbar from './components/Navbar/Navbar';
+import s from './App.module.css';
 import Music from './components/Music/Music';
 import News from './components/News/News';
 import Settings from './components/Settings/Settings';
@@ -28,11 +27,10 @@ class App extends React.Component {
     }
     return (
       <Switch >
-        <div className='app-wrapper'>
+        <div className={s.wrapper}>
           <HeaderContainer />
-          <Navbar />
-          <div className='app-wrapper-content'>
-            <Redirect from='/' to='/profile' />
+          <Redirect from='/' to='/profile' />
+          <div className={s.block}>
             <Route path='/dialogs' render={withSuspense(DialogsContainer)} />
             <Route path='/profile/:userId?' render={withSuspense(ProfileContainer)} />
             <Route path='/users' render={() => <UsersContainer />} />
