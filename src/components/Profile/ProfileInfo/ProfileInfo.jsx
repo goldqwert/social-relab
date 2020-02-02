@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import s from './ProfileInfo.module.css';
 import Preloader from '../../common/Preloader/Preloader';
 import ProfileStatus from './ProfileStatus';
-import photoNull from '../../../assets/img/photoNull.png'
+import noavatar from '../../../assets/img/noavatar.png'
 import ProfileData from './ProfileData';
 import ProfileForm from './ProfileForm';
+import { NavLink } from 'react-router-dom';
 
 const ProfileInfo = (props) => {
-
     const [editMode, setEditMode] = useState(false)
 
     if (!props.profile) {
@@ -31,10 +31,10 @@ const ProfileInfo = (props) => {
         <div className={s.wrapper}>
             <div>
                 <div className={s.name}><h3>{props.profile.fullName}</h3></div>
-                <img className={s.photo} src={props.profile.photos.large || photoNull} />
+                <NavLink to='/profile'><img className={s.photo} src={props.profile.photos.large || noavatar} alt='avatar' /></NavLink>
             </div>
             <div>{!props.match.params.userId ? <input id='file' type='file' onChange={changeMainPhoto} /> : undefined}
-                <label for='file' className={s.upload}>change photo</label></div>
+                <label htmlFor='file' className={s.upload}>{props.history.location.pathname === '/profile' ? 'change photo' : ''}</label></div>
             <ProfileStatus status={props.status} updateStatus={props.updateStatus} isOwner={props.match.params.userId} />
             {editMode ? <ProfileForm profile={props.profile} onSubmit={onSubmit} /> : <ProfileData profile={props.profile}
                 isOwner={props.match.params.userId} activateEditMode={() => { setEditMode(true) }} />}

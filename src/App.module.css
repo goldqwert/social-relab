@@ -13,12 +13,13 @@ textarea {
   outline: none;
 }
 
-/* input {
-  padding: 10px;
+input {
+  padding: 5px;
   font: 300 16px 'Poppins', sans-serif;
   border-radius: 10px;
-  /* outline: none; */
-
+  outline: none;
+  border: 1px solid #c3c3c3;
+}
 
 .wrapper {
   display: grid;

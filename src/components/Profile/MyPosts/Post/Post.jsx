@@ -1,11 +1,13 @@
 import React from 'react';
 import s from './Post.module.css';
+import noavatar from '../../../../assets/img/noavatar.png'
+import { NavLink } from 'react-router-dom';
 
 const Post = (props) => {
     return (
         <div className={s.item}>
             <div className={s.avatar}>
-                <img src="http://pm1.narvii.com/6889/74979d4d2744ec6e27995b6e866f091d04c0b40cr1-515-414v2_uhq.jpg" alt=''></img>
+                <NavLink to='/profile'><img src={props.smallPhoto || noavatar} alt='avatar'></img></NavLink>
             </div>
             <div className={s.avatar}>
                 {props.message}

@@ -2,14 +2,35 @@
     font-weight: bold;
     font-size: 25px;
 }
+
 .paginator {
     margin: 10px;
 }
+
 .pageNumber {
     padding: 2px;
     border: 1px solid grey;
+    cursor: pointer;
 }
+
 .pageNumber.selectedPage {
     font-weight: bold;	    
     border-color: black;
+}
+
+.btn {
+    background: #d3460d;
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    font: 600 16px 'Poppins', sans-serif;
+    margin: 1rem;
+    outline: none;
+    padding: 10px 10px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #a12f02;
 }

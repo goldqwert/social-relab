@@ -1,12 +1,16 @@
-.posts_wrapper {
-    padding: 10px; 
-}
-
-.posts {
+.wrapper {
     display: grid;
+    justify-items: center;
+    text-align: center;
+}
+.word {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 60px;
+    font-weight: 600;
 }
 
-.send {
+.btn {
     background: #d3460d;
     border: none;
     border-radius: 50px;
@@ -19,6 +23,11 @@
     cursor: pointer;
 }
 
-.send:hover {
+.btn:hover {
     background: #a12f02;
+}
+
+.error {
+    height: 20px;
+    color: #a12f02;
 }

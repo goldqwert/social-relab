@@ -23,8 +23,7 @@
     border: none;
     border-radius: 50px;
     color: #fff;
-    font-size: inherit;
-    font-weight: 600;
+    font: 600 16px 'Poppins', sans-serif;
     margin: 1rem;
     outline: none;
     padding: 10px 10px;
@@ -36,14 +35,6 @@
     background: #a12f02;
 }
 
-.input {
-    padding: 5px;
-    font: 300 16px 'Poppins', sans-serif;
-    border-radius: 10px;
-    outline: none;
-    border: 1px solid #c3c3c3;
-}
-
 .error {
     color: #a12f02;
 }
@@ -52,6 +43,7 @@
     height: 0;
     overflow: hidden;
     width: 0;
+    display: none;
   }
   
 [type="file"] + label {
@@ -61,8 +53,7 @@
     color: #fff;
     cursor: pointer;
     display: inline-block;
-    font-size: inherit;
-    font-weight: 600;
+    font: 600 16px 'Poppins', sans-serif;
     margin: 1rem;
     outline: none;
     padding: 10px 10px;

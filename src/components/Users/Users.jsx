@@ -7,12 +7,13 @@ const Users = ({ users, totalUsersCount, pageSize, onPageChanged, currentPage, .
     return (<div className={s.wrapper}>
         <Paginator totalUsersCount={totalUsersCount}
             pageSize={pageSize} onPageChanged={onPageChanged} currentPage={currentPage} />
-
-        {users.map(u => <User u={u}
-            followInProgress={props.followInProgress}
-            follow={props.follow}
-            unfollow={props.unfollow}
-            key={u.id} />)}
+        <div className={s.users}>
+            {users.map(u => <User u={u}
+                followInProgress={props.followInProgress}
+                follow={props.follow}
+                unfollow={props.unfollow}
+                key={u.id} />)}
+        </div>
     </div >)
 }
 

@@ -2,7 +2,6 @@ import React from 'react';
 import { follow, unfollow, getUsers } from '../../redux/usersReducer'
 import { connect } from 'react-redux';
 import Users from './Users'
-import s from './Users.module.css';
 import Preloader from '../common/Preloader/Preloader';
 import { compose } from 'redux'
 import { getPageSize, getUsersState, getTotalUsersCount, getCurrentPage, getIsFetching, getFollowInProgress } from '../../redux/users-selector';
@@ -21,7 +20,7 @@ class UsersContainer extends React.Component {
 
     render() {
         return <>
-            {this.props.isFetching ? <Preloader classForPreloader={s.preloader} /> : <Users totalUsersCount={this.props.totalUsersCount}
+            {this.props.isFetching ? <Preloader /> : <Users totalUsersCount={this.props.totalUsersCount}
                 pageSize={this.props.pageSize}
                 onPageChanged={this.onPageChanged}
                 currentPage={this.props.currentPage}

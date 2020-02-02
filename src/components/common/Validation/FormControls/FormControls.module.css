@@ -18,3 +18,8 @@
 .errors {
     height: 20px;
 }
+
+.preloader {
+    display: grid;
+    justify-content: center;
+}

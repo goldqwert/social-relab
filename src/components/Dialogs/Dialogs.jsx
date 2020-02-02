@@ -9,9 +9,9 @@ const Dialogs = (props) => {
 
     let state = props.dialogsPage;
 
-    let dialogsElements = state.dialogs.map((d) => <DialogItem name={d.name} id={d.id} />)
+    let dialogsElements = state.dialogs.map((d) => <DialogItem name={d.name} id={d.id} key={d.id} />)
 
-    let messagesElements = state.messages.map((m) => <Message message={m.message} id={m.id} />)
+    let messagesElements = state.messages.map((m) => <Message message={m.message} id={m.id} key={m.id} />)
 
     if (!props.isAuth) return <Redirect to={'/login'} />;
 
@@ -21,13 +21,11 @@ const Dialogs = (props) => {
 
     return (
         <div className={s.dialogs}>
-            <div className={s.dialogsItems}>
-                {dialogsElements}
+            <div className={s.item}>
+                <div className={s.friend}>{dialogsElements} </div>
+                <div className={s.message}>{messagesElements}</div>
             </div>
-            <div className={s.messages}>
-                {messagesElements}
-            </div>
-            <AddMessageForm onSubmit={onSendMessage} />
+            <div className={s.send}><AddMessageForm onSubmit={onSendMessage} /></div>
         </div>
     )
 }

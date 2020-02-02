@@ -10,7 +10,7 @@ const CHANGE_FOLLOW_IN_PROGRESS = 'Social_Relab/UsersReducer/CHANGE_FOLLOW_IN_PR
 
 let initialState = {
     users: [],
-    pageSize: 5,
+    pageSize: 10,
     totalUsersCount: 10,
     currentPage: 1,
     isFetching: false,
@@ -50,7 +50,7 @@ const usersReducer = (state = initialState, action) => {
                 ...state,
                 followInProgress: action.status
                     ? [...state.followInProgress, action.userId]
-                    : state.followInProgress.filter(id => id != action.userId)
+                    : state.followInProgress.filter(id => id !== action.userId)
             }
         default: return state
     }
