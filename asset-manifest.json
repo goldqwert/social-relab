@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Social-Relab/static/css/main.cce3f954.chunk.css",
+    "main.css": "/Social-Relab/static/css/main.9944b5e1.chunk.css",
     "main.js": "/Social-Relab/static/js/main.a893f88e.chunk.js",
     "main.js.map": "/Social-Relab/static/js/main.a893f88e.chunk.js.map",
     "runtime-main.js": "/Social-Relab/static/js/runtime-main.9c58af56.js",
@@ -14,11 +14,11 @@
     "static/js/4.9c09962c.chunk.js": "/Social-Relab/static/js/4.9c09962c.chunk.js",
     "static/js/4.9c09962c.chunk.js.map": "/Social-Relab/static/js/4.9c09962c.chunk.js.map",
     "index.html": "/Social-Relab/index.html",
-    "precache-manifest.620a02b96f1690cf045cd2b8b9177acd.js": "/Social-Relab/precache-manifest.620a02b96f1690cf045cd2b8b9177acd.js",
+    "precache-manifest.17fadd48362c19fe23472de56800c39c.js": "/Social-Relab/precache-manifest.17fadd48362c19fe23472de56800c39c.js",
     "service-worker.js": "/Social-Relab/service-worker.js",
     "static/css/3.6953b78b.chunk.css.map": "/Social-Relab/static/css/3.6953b78b.chunk.css.map",
     "static/css/4.487bca49.chunk.css.map": "/Social-Relab/static/css/4.487bca49.chunk.css.map",
-    "static/css/main.cce3f954.chunk.css.map": "/Social-Relab/static/css/main.cce3f954.chunk.css.map",
+    "static/css/main.9944b5e1.chunk.css.map": "/Social-Relab/static/css/main.9944b5e1.chunk.css.map",
     "static/media/preloader.svg": "/Social-Relab/static/media/preloader.4b875920.svg"
   }
 }
