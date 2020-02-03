@@ -1,4 +1,5 @@
 .wrapper {
+    display: grid;
     text-align: center;
     font-weight: 600;
 }

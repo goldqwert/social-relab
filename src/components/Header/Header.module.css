@@ -1,9 +1,9 @@
 .header {
     background-color: #d55844;
     display: grid;
-    grid-auto-flow: column;
     justify-items: center;
     align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
 }
     
 .header img {
