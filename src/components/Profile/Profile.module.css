@@ -1,8 +1,8 @@
 .wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     justify-items: center;
     grid-gap: 1vw;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 
 .posts, .info {
@@ -13,3 +13,9 @@
     text-align: center;
     padding: 20px
 }
+
+@media (max-width: 1140px) {
+    .wrapper {
+        grid-template-columns: none;
+    }
+} 

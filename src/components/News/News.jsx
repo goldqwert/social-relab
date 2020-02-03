@@ -6,7 +6,7 @@ const News = (props) => {
     return (
         <div className={s.wrapper}>
             News is being developed
-           <Preloader />
+            <Preloader />
         </div>
     )
 }

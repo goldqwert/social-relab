@@ -2,5 +2,4 @@
     display: grid;
     text-align: center;
     font-weight: 600;
-    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
 }
