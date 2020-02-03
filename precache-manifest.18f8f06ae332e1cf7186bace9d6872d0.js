@@ -1,26 +1,26 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "182a7dd4440992494abd6b73d3483b4a",
+    "revision": "8cdedd457ee6a65d66904e41d36b8e41",
     "url": "/Social-Relab/index.html"
   },
   {
-    "revision": "a1ec290f6464ef618f39",
-    "url": "/Social-Relab/static/css/3.6953b78b.chunk.css"
+    "revision": "cf5dbd01b0d3219f5e14",
+    "url": "/Social-Relab/static/css/3.e61718ba.chunk.css"
   },
   {
     "revision": "aea3107a56c20221b7ee",
     "url": "/Social-Relab/static/css/4.487bca49.chunk.css"
   },
   {
-    "revision": "ed36c84e37e9d42d5cb8",
-    "url": "/Social-Relab/static/css/main.9944b5e1.chunk.css"
+    "revision": "0cc6b352b706dce9112c",
+    "url": "/Social-Relab/static/css/main.7805be89.chunk.css"
   },
   {
     "revision": "b5b0027741e030f703ce",
     "url": "/Social-Relab/static/js/2.e7c7a8b3.chunk.js"
   },
   {
-    "revision": "a1ec290f6464ef618f39",
+    "revision": "cf5dbd01b0d3219f5e14",
     "url": "/Social-Relab/static/js/3.b83e9a7b.chunk.js"
   },
   {
@@ -28,12 +28,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Social-Relab/static/js/4.9c09962c.chunk.js"
   },
   {
-    "revision": "ed36c84e37e9d42d5cb8",
+    "revision": "0cc6b352b706dce9112c",
     "url": "/Social-Relab/static/js/main.a893f88e.chunk.js"
   },
   {
-    "revision": "c0da3053d98f1ed619bf",
-    "url": "/Social-Relab/static/js/runtime-main.9c58af56.js"
+    "revision": "45b9544e8ec38236d9c4",
+    "url": "/Social-Relab/static/js/runtime-main.8cf67b90.js"
   },
   {
     "revision": "4b87592064e51d21bd1e02783c09c210",
