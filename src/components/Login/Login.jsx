@@ -13,8 +13,8 @@ let LoginForm = (props) => {
         <div className={s.wrapper}>
             <div className={s.word}>
                 <p>Чтобы посмотреть и протестировать приложение введите данные тестового акканута:</p>
-                <p>Email: goldyukol12@gmail.com</p>
-                <p>Password: yura1998Q</p>
+                <p>Email: free@samuraijs.com</p>
+                <p>Password: free</p>
             </div>
             <form onSubmit={handleSubmit}>
                 <h2>Login</h2>
