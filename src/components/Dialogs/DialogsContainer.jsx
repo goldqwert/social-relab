@@ -9,7 +9,6 @@ let mapStateToProps = (state) => {
         dialogsPage: state.dialogsPage
     }
 }
-
 export default compose(
     connect(mapStateToProps, { sendMessage }),
     withAuthRedirect
