@@ -1,11 +1,15 @@
 import { getAuth } from './authReducer';
 const INITIALIZE_SUCCESS = 'Social_Relab/AppReducer/INITIALIZE_SUCCESS';
 
-let initialState = {
+export type InitialStateType = {
+    initialize: boolean
+}
+
+let initialState: InitialStateType = {
     initialize: false
 }
 
-const appReducer = (state = initialState, action) => {
+const appReducer = (state = initialState, action: any): InitialStateType  => {
     switch (action.type) {
         case INITIALIZE_SUCCESS:
             return {
@@ -16,10 +20,14 @@ const appReducer = (state = initialState, action) => {
     }
 }
 
-export const initializeSuccess = () => ({ type: INITIALIZE_SUCCESS })
+type InitializeSuccessType = {
+    type: typeof INITIALIZE_SUCCESS
+}
+
+export const initializeSuccess = (): InitializeSuccessType => ({ type: INITIALIZE_SUCCESS })
 
 export const initializeApp = () => {
-    return async (dispatch) => {
+    return async (dispatch: any) => {
         let promise = await dispatch(getAuth())
         Promise.all([promise])
         dispatch(initializeSuccess())
